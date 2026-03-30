@@ -28,17 +28,27 @@ function updateThemeButton(theme) {
 
 generatorBtn.addEventListener("click", () => {
     lottoNumbersContainer.innerHTML = "";
-    const numbers = new Set();
-    while(numbers.size < 6) {
-        numbers.add(Math.floor(Math.random() * 45) + 1);
-    }
     
-    const sortedNumbers = Array.from(numbers).sort((a,b) => a - b);
+    // 5세트 생성
+    for (let i = 0; i < 5; i++) {
+        const numbers = new Set();
+        while(numbers.size < 6) {
+            numbers.add(Math.floor(Math.random() * 45) + 1);
+        }
+        
+        const sortedNumbers = Array.from(numbers).sort((a,b) => a - b);
+        
+        const setRow = document.createElement("div");
+        setRow.classList.add("lotto-numbers");
+        setRow.style.marginBottom = "15px";
 
-    sortedNumbers.forEach(number => {
-        const numberElement = document.createElement("div");
-        numberElement.classList.add("lotto-number");
-        numberElement.textContent = number;
-        lottoNumbersContainer.appendChild(numberElement);
-    });
+        sortedNumbers.forEach(number => {
+            const numberElement = document.createElement("div");
+            numberElement.classList.add("lotto-number");
+            numberElement.textContent = number;
+            setRow.appendChild(numberElement);
+        });
+        
+        lottoNumbersContainer.appendChild(setRow);
+    }
 });
