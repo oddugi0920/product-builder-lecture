@@ -38,17 +38,28 @@ generatorBtn.addEventListener("click", () => {
         
         const sortedNumbers = Array.from(numbers).sort((a,b) => a - b);
         
+        const setContainer = document.createElement("div");
+        setContainer.classList.add("set-container");
+
         const setRow = document.createElement("div");
         setRow.classList.add("lotto-numbers");
-        setRow.style.marginBottom = "15px";
 
         sortedNumbers.forEach(number => {
             const numberElement = document.createElement("div");
             numberElement.classList.add("lotto-number");
+            
+            // 번호대별 클래스 추가
+            if (number <= 10) numberElement.classList.add("ball-10");
+            else if (number <= 20) numberElement.classList.add("ball-20");
+            else if (number <= 30) numberElement.classList.add("ball-30");
+            else if (number <= 40) numberElement.classList.add("ball-40");
+            else numberElement.classList.add("ball-45");
+
             numberElement.textContent = number;
             setRow.appendChild(numberElement);
         });
         
-        lottoNumbersContainer.appendChild(setRow);
+        setContainer.appendChild(setRow);
+        lottoNumbersContainer.appendChild(setContainer);
     }
 });

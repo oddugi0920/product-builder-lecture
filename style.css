@@ -88,21 +88,44 @@ h1 {
 .lotto-numbers {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    margin-top: 32px;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .lotto-number {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    background-color: var(--number-bg);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    font-size: 1.8em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: var(--number-text);
-    box-shadow: 0 4px 8px var(--shadow-color);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: inset -3px -3px 6px rgba(0,0,0,0.2), 0 4px 8px var(--shadow-color);
     transition: all 0.3s ease;
+}
+
+/* 로또 번호대별 색상 */
+.ball-10 { background: radial-gradient(circle at 30% 30%, #fbc400, #ff8c00); } /* 1-10: 노란색 */
+.ball-20 { background: radial-gradient(circle at 30% 30%, #69c8f2, #0077b6); } /* 11-20: 파란색 */
+.ball-30 { background: radial-gradient(circle at 30% 30%, #ff7272, #d90429); } /* 21-30: 빨간색 */
+.ball-40 { background: radial-gradient(circle at 30% 30%, #aaaaaa, #495057); } /* 31-40: 회색 */
+.ball-45 { background: radial-gradient(circle at 30% 30%, #b0d840, #52b788); } /* 41-45: 초록색 */
+
+.set-container {
+    padding: 15px;
+    border-bottom: 1px dashed var(--shadow-color);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.set-container:last-child {
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
