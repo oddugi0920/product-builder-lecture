@@ -2,10 +2,16 @@ const generatorBtn = document.getElementById("generator-btn");
 const lottoNumbersContainer = document.getElementById("lotto-numbers");
 const themeToggle = document.getElementById("theme-toggle");
 const testBtn = document.getElementById("test-btn");
+const test2Btn = document.getElementById("test2-btn");
 
 // 테스트 버튼 로직
 testBtn.addEventListener("click", () => {
     alert("배포가 정상적으로 완료되었습니다! (다크 모드 기능 포함)");
+});
+
+// 테스트2 버튼 로직
+test2Btn.addEventListener("click", () => {
+    alert("테스트2 버튼이 클릭되었습니다! 🚀");
 });
 
 // 테마 초기화
