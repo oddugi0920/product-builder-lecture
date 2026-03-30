@@ -11,10 +11,31 @@
     <div class="container">
         <button id="theme-toggle" class="theme-toggle">다크 모드</button>
         <button id="test-btn" class="theme-toggle" style="right: auto; left: 20px;">배포 테스트</button>
-        <button id="test2-btn" class="theme-toggle" style="right: auto; left: 120px;">테스트2</button>
+        <button id="contact-toggle" class="contact-toggle">제휴 문의</button>
         <h1>로또 번호 추첨기</h1>
         <button id="generator-btn">행운의 번호 받기</button>
         <div id="lotto-numbers" class="lotto-numbers"></div>
+
+        <!-- 제휴 문의 폼 -->
+        <div id="contact-form-container" class="contact-form-container hidden">
+            <hr>
+            <h2>제휴 문의</h2>
+            <form action="https://formspree.io/f/xpqodzoo" method="POST">
+                <div class="form-group">
+                    <label for="name">성함 / 업체명</label>
+                    <input type="text" name="name" id="name" required placeholder="성함을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" name="_replyto" id="email" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea name="message" id="message" required placeholder="문의하실 내용을 상세히 적어주세요."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">문의하기</button>
+            </form>
+        </div>
     </div>
     <script src="main.js"></script></body>
 </html>
